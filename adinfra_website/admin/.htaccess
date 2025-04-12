@@ -1,0 +1,30 @@
+# Prevent directory listing
+Options -Indexes
+
+# Protect against accessing PHP files except index.php and specified files
+<FilesMatch "^(?!(index\.php|login\.php|logout\.php|dashboard\.php|manage_projects\.php|add_project\.php|edit_project\.php|delete_project\.php|view_project\.php|manage_contacts\.php|view_contact\.php|delete_contact\.php)$).*\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Protect sensitive files
+<FilesMatch "^(\.htaccess|\.htpasswd|\.git|\.env|config\.php)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Redirect all requests to index.php if file/directory doesn't exist
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+
+# Force HTTPS (uncomment in production)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Require authentication
+AuthType Basic
+AuthName "Admin Area"
+AuthUserFile /project/sandbox/user-workspace/adinfra_website/admin/.htpasswd
+Require valid-user
