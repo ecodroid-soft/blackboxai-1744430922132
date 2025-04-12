@@ -1,0 +1,208 @@
+/* Custom styles to complement Tailwind CSS */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom animations */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Custom gradient backgrounds */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #1a5f7a 0%, #2d88aa 100%);
+}
+
+.bg-gradient-secondary {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+/* Custom shadows */
+.shadow-custom {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom transitions */
+.transition-custom {
+    transition: all 0.3s ease;
+}
+
+/* Slider custom styles */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff !important;
+    background: rgba(0, 0, 0, 0.3);
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #fff;
+}
+
+/* Custom form styles */
+.form-input:focus {
+    border-color: #1a5f7a;
+    box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.1);
+}
+
+/* Project card hover effects */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom button styles */
+.btn-primary {
+    background-color: #1a5f7a;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2d88aa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 95, 122, 0.2);
+}
+
+/* Custom loading spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #1a5f7a;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    h2 {
+        font-size: 1.75rem !important;
+    }
+    h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1a5f7a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2d88aa;
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu.hidden {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+/* Image hover effects */
+.image-hover {
+    overflow: hidden;
+}
+
+.image-hover img {
+    transition: transform 0.5s ease;
+}
+
+.image-hover:hover img {
+    transform: scale(1.1);
+}
+
+/* Custom tooltip */
+.tooltip {
+    position: relative;
+}
+
+.tooltip:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.tooltip:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
