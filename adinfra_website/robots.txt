@@ -1,0 +1,47 @@
+# Allow all web crawlers
+User-agent: *
+Allow: /
+Allow: /index.php
+Allow: /about.php
+Allow: /projects.php
+Allow: /contact.php
+
+# Disallow admin area and sensitive directories
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /assets/
+
+# Crawl-delay to prevent server overload
+Crawl-delay: 10
+
+# Sitemap location (update with your actual domain)
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Additional rules for specific bots
+User-agent: Googlebot
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+
+User-agent: Googlebot-Image
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+
+# Block common bad bots
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# Rate limiting for specific bots
+User-agent: AhrefsBot
+Crawl-delay: 20
+
+User-agent: SemrushBot
+Crawl-delay: 20
